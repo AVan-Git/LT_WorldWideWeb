@@ -1,0 +1,4 @@
+1692607474199	Delete resource 'test_tomcat'
+1692609486635	Delete resource 'Servers/Tomcat v10.1 Server at localhost-config'
+1692609702538	Delete resource 'testServlet'
+1692611528111	Delete resource 'testTomCatDynamic'
