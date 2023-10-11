@@ -3,6 +3,7 @@ package vn.edu.iuh.fit.se.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@Data
+
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +26,14 @@ public class Department {
 
     //JPA
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Employee> employeeList;
+    private List<Employee> employeeList = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", employeeList=" + employeeList +
+                '}';
+    }
 }
