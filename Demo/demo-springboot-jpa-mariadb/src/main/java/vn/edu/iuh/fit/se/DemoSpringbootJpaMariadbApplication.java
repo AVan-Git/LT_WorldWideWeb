@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import vn.edu.iuh.fit.se.entity.Department;
 import vn.edu.iuh.fit.se.entity.Employee;
@@ -20,6 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 @SpringBootApplication
+//@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class DemoSpringbootJpaMariadbApplication {
 
 	@Autowired
@@ -35,7 +37,7 @@ public class DemoSpringbootJpaMariadbApplication {
 	}
 
 	//Test
-	@Bean
+//	@Bean
 	public CommandLineRunner sampleRecord (){
 		return args -> {
 			Random rand = new Random();

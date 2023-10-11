@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@ToString
+//@ToString
 @Data
 public class Department {
     @Id
@@ -28,12 +28,12 @@ public class Department {
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Employee> employeeList ;
 
-//    @Override
-//    public String toString() {
-//        return "Department{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", employeeList=" + employeeList +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", employeeList=" + employeeList +
+                '}';
+    }
 }

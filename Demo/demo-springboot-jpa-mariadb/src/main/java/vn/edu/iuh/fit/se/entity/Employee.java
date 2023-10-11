@@ -26,7 +26,7 @@ public class Employee {
 
     //JPA
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private  Department department;
 
     @Override
