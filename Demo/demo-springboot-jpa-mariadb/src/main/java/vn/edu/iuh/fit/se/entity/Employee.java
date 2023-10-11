@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 @Setter
 @Getter
-@ToString
+//@ToString
 @Data
 public class Employee {
     @Id
@@ -25,7 +25,17 @@ public class Employee {
     private LocalDate dob;
 
     //JPA
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.EAGER)
     private  Department department;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", dob=" + dob +
+                ", department=" + department.getId() +
+                '}';
+    }
 }
