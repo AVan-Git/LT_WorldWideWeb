@@ -11,18 +11,22 @@ import vn.edu.iuh.fit.se.entity.Department;
 import vn.edu.iuh.fit.se.entity.Employee;
 import vn.edu.iuh.fit.se.repositories.DepartmentRepository;
 import vn.edu.iuh.fit.se.repositories.EmployeeRepository;
+import vn.edu.iuh.fit.se.service.EmployeeService;
+import vn.edu.iuh.fit.se.service.impl.DepartmentServiceImpl;
+import vn.edu.iuh.fit.se.service.impl.EmployeeServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @SpringBootApplication
 public class DemoSpringbootJpaMariadbApplication {
 
 	@Autowired
-	private EmployeeRepository employeeRepository;
+	private EmployeeServiceImpl employeeService;
 
 	@Autowired
-	private DepartmentRepository departmentRepository;
+	private DepartmentServiceImpl departmentService;
 
 	private static final Logger log = LoggerFactory.getLogger(DemoSpringbootJpaMariadbApplication.class);
 
@@ -34,24 +38,28 @@ public class DemoSpringbootJpaMariadbApplication {
 	@Bean
 	public CommandLineRunner sampleRecord (){
 		return args -> {
+			Random rand = new Random();
+
 			Department department1 = new Department("Khoa Cong nghe thong tin");
 			Department department2 = new Department("Khoa tri tue nhan tao");
 			Department department3 = new Department("Khoa he thong thon tin");
-			departmentRepository.save(department1);
-
-			for (int i = 0; i < 10; i++) {
+//			departmentRepository.save(department1);
+//			department3.setId(3L);
+			long id = rand.nextLong(3);
+			for (int i = 200; i < 220; i++) {
 				Employee e = new Employee("name #"+i);
-				e.setDepartment(department1);
-				employeeRepository.save(e);
+				department3.setId(rand.nextLong(3)+1);
+				e.setDepartment(department3);
+				employeeService.insert(e);
 			}
 
 //			departmentRepository.save(department1);
-			departmentRepository.save(department2);
-			departmentRepository.save(department3);
+//			departmentRepository.save(department2);
+//			departmentRepository.save(department3);
 
 			System.out.println("Start text_01()");
-			departmentRepository.findAll().forEach(System.out::println);
-			employeeRepository.findAll().forEach(System.out::println);
+			departmentService.findAll().forEach(System.out::println);
+			employeeService.findAll().forEach(System.out::println);
 		};
 	}
 
