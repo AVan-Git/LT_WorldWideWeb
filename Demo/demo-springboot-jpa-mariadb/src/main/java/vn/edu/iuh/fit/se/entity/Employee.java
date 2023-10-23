@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Setter
 @Getter
 //@ToString
-@Data
+//@Data
 public class Employee {
     @Id
     @Column(name = "emp_id")
@@ -27,6 +27,7 @@ public class Employee {
     //JPA
 
     @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "dep_id")
     private  Department department;
 
     @Override
@@ -35,7 +36,7 @@ public class Employee {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", dob=" + dob +
-                ", department=" + department.getId() +
+//                ", department=" + department.getId() +
                 '}';
     }
 }

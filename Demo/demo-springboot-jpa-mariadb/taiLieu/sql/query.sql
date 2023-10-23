@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `department` (
   PRIMARY KEY (`dept_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table mydb_lt.department: ~3 rows (approximately)
+-- Dumping data for table mydb_lt.department: ~0 rows (approximately)
 REPLACE INTO `department` (`dept_id`, `dept_name`) VALUES
 	(1, 'Khoa Cong nghe thong tin'),
 	(2, 'Khoa tri tue nhan tao'),
@@ -41,9 +41,9 @@ CREATE TABLE IF NOT EXISTS `employee` (
   PRIMARY KEY (`emp_id`),
   KEY `FK73iqbdohd6qwfdaij2bxc3vxx` (`department_dept_id`),
   CONSTRAINT `FK73iqbdohd6qwfdaij2bxc3vxx` FOREIGN KEY (`department_dept_id`) REFERENCES `department` (`dept_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table mydb_lt.employee: ~70 rows (approximately)
+-- Dumping data for table mydb_lt.employee: ~0 rows (approximately)
 REPLACE INTO `employee` (`dob`, `department_dept_id`, `emp_id`, `emp_name`) VALUES
 	(NULL, 1, 1, 'name #0'),
 	(NULL, 1, 2, 'name #1'),
@@ -114,7 +114,47 @@ REPLACE INTO `employee` (`dob`, `department_dept_id`, `emp_id`, `emp_name`) VALU
 	(NULL, 2, 69, 'name #216'),
 	(NULL, 3, 70, 'name #217'),
 	(NULL, 2, 71, 'name #218'),
-	(NULL, 3, 72, 'name #219');
+	(NULL, 3, 72, 'name #219'),
+	(NULL, 1, 73, 'name #200'),
+	(NULL, 2, 74, 'name #201'),
+	(NULL, 3, 75, 'name #202'),
+	(NULL, 3, 76, 'name #203'),
+	(NULL, 2, 77, 'name #204'),
+	(NULL, 3, 78, 'name #205'),
+	(NULL, 2, 79, 'name #206'),
+	(NULL, 1, 80, 'name #207'),
+	(NULL, 3, 81, 'name #208'),
+	(NULL, 2, 82, 'name #209'),
+	(NULL, 3, 83, 'name #210'),
+	(NULL, 2, 84, 'name #211'),
+	(NULL, 2, 85, 'name #212'),
+	(NULL, 2, 86, 'name #213'),
+	(NULL, 3, 87, 'name #214'),
+	(NULL, 3, 88, 'name #215'),
+	(NULL, 1, 89, 'name #216'),
+	(NULL, 2, 90, 'name #217'),
+	(NULL, 3, 91, 'name #218'),
+	(NULL, 2, 92, 'name #219'),
+	(NULL, 2, 93, 'name #200'),
+	(NULL, 1, 94, 'name #201'),
+	(NULL, 2, 95, 'name #202'),
+	(NULL, 3, 96, 'name #203'),
+	(NULL, 2, 97, 'name #204'),
+	(NULL, 2, 98, 'name #205'),
+	(NULL, 1, 99, 'name #206'),
+	(NULL, 2, 100, 'name #207'),
+	(NULL, 2, 101, 'name #208'),
+	(NULL, 3, 102, 'name #209'),
+	(NULL, 1, 103, 'name #210'),
+	(NULL, 1, 104, 'name #211'),
+	(NULL, 3, 105, 'name #212'),
+	(NULL, 3, 106, 'name #213'),
+	(NULL, 2, 107, 'name #214'),
+	(NULL, 3, 108, 'name #215'),
+	(NULL, 2, 109, 'name #216'),
+	(NULL, 2, 110, 'name #217'),
+	(NULL, 2, 111, 'name #218'),
+	(NULL, 2, 112, 'name #219');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 //@ToString
-@Data
+//@Data
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
