@@ -60,7 +60,7 @@ public class ProductPriceReponsitory {
         }
     }
     // remove
-    public boolean delete(long maXoa) {
+    public boolean delete(LocalDateTime maXoa) {
         try {
             transaction.begin();
             entityManager.remove(entityManager.find(ProductPrice.class, maXoa));
