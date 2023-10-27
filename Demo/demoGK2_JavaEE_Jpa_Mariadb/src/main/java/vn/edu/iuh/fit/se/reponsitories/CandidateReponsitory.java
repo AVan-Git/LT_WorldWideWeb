@@ -94,7 +94,7 @@ public class CandidateReponsitory {
     //getALL
     public List<Candidate> getAll() {
         List<Candidate> lst = new ArrayList<>();
-        String sql = "";
+        String sql = "SELECT c FROM Candidate c";
         try {
             transaction.begin();
             lst = entityManager.createQuery(sql, Candidate.class).getResultList();

@@ -92,7 +92,7 @@ public class ExperienceReponsitory {
     //getALL
     public List<Experience> getAll() {
         List<Experience> lst = new ArrayList<>();
-        String sql = "";
+        String sql = "SELECT e FROM Experience e";
         try {
             transaction.begin();
             lst = entityManager.createQuery(sql, Experience.class).getResultList();
