@@ -3,6 +3,8 @@ package vn.iuh.edu.fit.se.model;
 import jakarta.persistence.*;
 import vn.iuh.edu.fit.se.enums.ProductStatus;
 
+import java.util.List;
+
 @Entity
 @Table(name = "product")
 public class Product {
@@ -20,6 +22,10 @@ public class Product {
     private String unit;
     @Column(name = "status")
     private ProductStatus status;
+
+    //Jpa
+    @OneToMany(mappedBy = "product", cascade = CascadeType.PERSIST)
+    private List<ProductPrice> productPrices;
 
     @Override
     public String toString() {
