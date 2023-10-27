@@ -1,6 +1,7 @@
 # on tap thi GK java ee
 ## anh minh hoa
 ![...](./tailieu/images/img_code.png)
+![...](./tailieu/images/img_db.png)
 ![...](./tailieu/images/img_Btap.png)
 
 ## note
@@ -40,3 +41,13 @@
 
         </persistence-unit>
 
+* entity:
+
+    - 1 product => n productPrice
+    - Jpa product
+      @OneToMany(mappedBy = "product", cascade = CascadeType.PERSIST)
+      private List<ProductPrice> productPrices;
+    - jpa productPrice
+      @ManyToOne
+      @JoinColumn(name = "pro_id", nullable = false)
+      private Product product;

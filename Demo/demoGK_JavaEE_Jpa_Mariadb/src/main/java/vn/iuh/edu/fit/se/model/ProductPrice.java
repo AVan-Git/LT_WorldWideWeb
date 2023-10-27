@@ -8,7 +8,6 @@ import java.time.LocalDate;
 @Table(name = "product_price")
 public class ProductPrice {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "price_date")
     private LocalDate priceDateTime;
     @Column(name = "note")
