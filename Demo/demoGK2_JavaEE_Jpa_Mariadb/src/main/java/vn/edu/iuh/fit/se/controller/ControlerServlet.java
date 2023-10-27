@@ -21,9 +21,22 @@ public class ControlerServlet extends HttpServlet {
         String action = req.getParameter("action");
         switch (action) {
             case "home":
+            {
                 handleHomeRequest(req,resp);
                 break;
+            }
+            case "list_candidate": {
+                handleListCandidate(req,resp);
+            }
         }
+    }
+
+    private void handleListCandidate(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        candidateReponsitory.getAll().forEach(System.out::println);
+
+        req.setAttribute("candidates", candidateReponsitory.getAll());
+        req.getRequestDispatcher("candidate.jsp").forward(req,resp);
     }
 
     private void handleHomeRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
