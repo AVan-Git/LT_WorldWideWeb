@@ -1,24 +1,25 @@
-# Hello everyone
-# Good luck
-## ở đây lưu file tài liệu môn Lập trình www và những source code demo theo bài
+# on tap GK java EE -- mariadb
 
+## Anh minh hoa
+![...](./tailieu/images/img_code.png)
+![...](./tailieu/images/img_db.png)
+![...](./tailieu/images/img_Btap.png)
 
+## Note: 1 project Java EE Rest Sevice
 
-## 1 project Java EE
-
-* create: 
+* create:
     - Rest Sevice - tomcat - gradle - vn.iuh.edu.fit.se - Artifact = "GK"
     - Web Profile 9.1
-    - lib 
-        mariadb
-        //for logging
-            implementation 'org.slf4j:slf4j-api:2.0.9'
-            implementation 'org.slf4j:slf4j-simple:2.0.9'
-        JPA
+    - lib
+      mariadb
+      //for logging
+      implementation 'org.slf4j:slf4j-api:2.0.9'
+      implementation 'org.slf4j:slf4j-simple:2.0.9'
+      JPA
 
 * persistence.xml:
-    
-    
+
+
         <persistence-unit name="lab_ontap" transaction-type="RESOURCE_LOCAL">
         
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
@@ -44,12 +45,12 @@
         </persistence-unit>
 
 * entity:
-    
+
     - 1 product => n productPrice
     - Jpa product
-        @OneToMany(mappedBy = "product", cascade = CascadeType.PERSIST)
-        private List<ProductPrice> productPrices;
+      @OneToMany(mappedBy = "product", cascade = CascadeType.PERSIST)
+      private List<ProductPrice> productPrices;
     - jpa productPrice
-        @ManyToOne
-        @JoinColumn(name = "pro_id", nullable = false)
-        private Product product;
+      @ManyToOne
+      @JoinColumn(name = "pro_id", nullable = false)
+      private Product product;
