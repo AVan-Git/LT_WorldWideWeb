@@ -9,5 +9,7 @@
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
+<a href="view_products">View Product</a>
+<a href="servers?action=listProduct">View Product2</a>
 </body>
 </html>

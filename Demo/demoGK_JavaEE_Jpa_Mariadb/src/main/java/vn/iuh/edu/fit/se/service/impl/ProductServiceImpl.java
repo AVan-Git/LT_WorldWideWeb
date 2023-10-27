@@ -10,9 +10,9 @@ import java.util.Optional;
 
 public class ProductServiceImpl implements ProductService {
 
-//    private ProductReponsitory productReponsitory = new ProductReponsitory();
-    @Inject
-    private ProductReponsitory reponsitory;
+    private ProductReponsitory reponsitory = new ProductReponsitory();
+//    @Inject
+//    private ProductReponsitory reponsitory;
     @Override
     public boolean insert(Product product) {
         return reponsitory.insert(product);
