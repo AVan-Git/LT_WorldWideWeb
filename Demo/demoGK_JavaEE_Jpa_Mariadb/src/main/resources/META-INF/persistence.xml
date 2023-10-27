@@ -6,6 +6,7 @@
     <persistence-unit name="lab_ontap" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>vn.iuh.edu.fit.se.model.Product</class>
+        <class>vn.iuh.edu.fit.se.model.ProductPrice</class>
 
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
