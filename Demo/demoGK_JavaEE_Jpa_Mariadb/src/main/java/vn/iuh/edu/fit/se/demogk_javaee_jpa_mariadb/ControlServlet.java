@@ -24,10 +24,6 @@ public class ControlServlet extends HttpServlet {
             handleProductRequest(req,resp);
                 break;
         }
-
-
-
-
     }
 
     private void handleProductRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
