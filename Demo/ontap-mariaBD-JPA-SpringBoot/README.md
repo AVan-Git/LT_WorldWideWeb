@@ -11,9 +11,9 @@
 ![...](./taiLieu/img_code.png)
 * Ảnh mariabd:
 ![...](./taiLieu/img_mariadb.png)
-
 * Ảnh web:
-
+* Ảnh error:
+* ![...](./taiLieu/img_err.png)
 # Getting Started
 
 ### Reference Documentation
