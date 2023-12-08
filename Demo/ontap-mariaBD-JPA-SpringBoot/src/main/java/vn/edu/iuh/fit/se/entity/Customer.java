@@ -21,12 +21,24 @@ public class Customer {
     @Column(name = "address")
     private String address;
     @Column(name = "so_ve")
-    private int soVe;
+    private int soVe = 0;
     //
     // JPA
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Ticket> tickets;
     //
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                ", soVe=" + soVe +
+//                ", tickets=" + tickets +
+                '}';
+    }
 
     public UUID getId() {
         return id;

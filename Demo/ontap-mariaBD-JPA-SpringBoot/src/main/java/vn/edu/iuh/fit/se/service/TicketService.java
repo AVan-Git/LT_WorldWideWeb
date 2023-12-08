@@ -9,11 +9,11 @@ import java.util.UUID;
 
 @Service
 public interface TicketService {
-    boolean insert(Ticket item);
+    void insert(Ticket item);
 
-    boolean update(Ticket item);
+    void update(Ticket item);
 
-    boolean delete(UUID uuid);
+    void delete(UUID uuid);
 
     Optional<Ticket> getById(UUID uuid);
 

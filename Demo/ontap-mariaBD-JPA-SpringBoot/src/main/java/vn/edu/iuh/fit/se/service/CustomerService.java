@@ -9,11 +9,11 @@ import java.util.UUID;
 
 @Service
 public interface CustomerService {
-    boolean insert(Customer item);
+    void insert(Customer item);
 
-    boolean update(Customer item);
+    void update(Customer item);
 
-    boolean delete(UUID uuid);
+    void delete(UUID uuid);
 
     Optional<Customer> getById(UUID uuid);
 

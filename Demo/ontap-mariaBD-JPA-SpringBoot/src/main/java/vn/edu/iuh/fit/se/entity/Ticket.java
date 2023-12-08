@@ -28,6 +28,18 @@ public class Ticket {
     //
 
 
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", tGianChieu=" + tGianChieu +
+                ", thoiLuong=" + thoiLuong +
+                ", price=" + price +
+                ", customer=" + customer +
+                '}';
+    }
+
     public UUID getId() {
         return id;
     }

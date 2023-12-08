@@ -5,7 +5,8 @@
     - id, name, age, address, soVe(số vé đã mua)
   - vé xem phim:
     - id, title(ten phim, ...), tgianChieu, thoiLuong, price;
- 
+## tài liệu 
+* CRUD thymeleaf - ( [link](https://www.baeldung.com/spring-boot-crud-thymeleaf) )
 ## Ảnh minh họa
 * Ảnh code:
 ![...](./taiLieu/img_code.png)
