@@ -9,15 +9,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import vn.edu.iuh.fit.entity.Cart;
+import vn.edu.iuh.fit.entity.Item;
 import vn.edu.iuh.fit.repository.CartRepository;
+import vn.edu.iuh.fit.repository.ItemRepository;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class CartController {
 
     @Autowired
     private CartRepository cartRepository;
+    @Autowired
+    private ItemRepository itemRepository;
 
     //
     @GetMapping("/carts")
@@ -74,5 +80,17 @@ public class CartController {
                 .orElseThrow(() -> new IllegalArgumentException("Khonog tin thay Cart:" + id));
         cartRepository.delete(cart);
         return "redirect:/carts";
+    }
+
+    //
+    @GetMapping("/detail_cart/{id}")
+    public String detail_cart(@PathVariable("id") long id, Model model) {
+
+        List<Item> items = itemRepository.findItemByCart_Id(id);
+        if (items.size() == 0)
+            model.addAttribute("items", null);
+        else
+            model.addAttribute("items", items);
+        return "/item/page-item";
     }
 }

@@ -14,6 +14,7 @@
             <th>id User</th>
             <th>Ngày tạo</th>
             <th>Ngày cập nhật</th>
+            <th>DS San pham</th>
             <th>Edit</th>
             <th>Del</th>
         </tr>
@@ -24,6 +25,7 @@
             <td th:text="${cart.idUser}"></td>
             <td th:text="${cart.dateAdd}"></td>
             <td th:text="${cart.dateUpdate}"></td>
+            <td ><a th:href="@{/detail_cart/{id}(id=${cart.id})}" />Detail</td>
             <td ><a th:href="@{/update_cart/{id}(id=${cart.id})}" />Edit</td>
             <td ><a th:href="@{/delete_cart/{id}(id=${cart.id})}" />Delete</td>
         </tr>
