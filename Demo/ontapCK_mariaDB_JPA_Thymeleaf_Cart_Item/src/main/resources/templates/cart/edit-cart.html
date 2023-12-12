@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Cart</title>
+</head>
+<body>
+<h2>Update Cart</h2>
+<hr/>
+<form action="#" 
+      th:action="@{/update_cart/{id}(id=${cart.id})}"
+      th:object="${cart}" 
+      method="post">
+    <label for="idUser"> Id User</label>
+    <input type="text" th:field="*{idUser}" name="idUser" id="idUser">
+    <!--    -->
+    <input type="submit" value="Edit Cart">
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DS Gio hang</title>
+</head>
+<body>
+    <h2>Danh sách giỏ hàng!</h2>
+    <hr/>
+    <table style="width: 100%">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>id User</th>
+            <th>Ngày tạo</th>
+            <th>Ngày cập nhật</th>
+            <th>Edit</th>
+            <th>Del</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "cart: ${carts}">
+            <td th:text="${cart.id}"></td>
+            <td th:text="${cart.idUser}"></td>
+            <td th:text="${cart.dateAdd}"></td>
+            <td th:text="${cart.dateUpdate}"></td>
+            <td ><a th:href="@{/update_cart/{id}(id=${cart.id})}" />Edit</td>
+            <td ><a th:href="@{/delete_cart/{id}(id=${cart.id})}" />Delete</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p><a href="/add_cart">add Cart</a></p>
+</body>
+</html>

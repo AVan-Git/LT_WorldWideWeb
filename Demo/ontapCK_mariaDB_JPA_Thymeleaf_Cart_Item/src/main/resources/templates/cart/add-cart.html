@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Cart</title>
+</head>
+<body>
+<h2>Add Cart</h2>
+<hr/>
+<form action="#" th:action="@{/add_cart}" th:object="${cart}" method="post">
+    <label for="idUser">Id User</label>
+    <input type="text" th:field="*{idUser}" name="idUser" id="idUser"/>
+    <!--        -->
+    <!--        <label for="idUser">Ngay tao</label>-->
+    <!--        <input type="text" th:field="*{idUser}" name="idUser" id="idUser" />-->
+
+    <!--        -->
+    <br/>
+    <input type="submit" value="Add Cart">
+</form>
+</body>
+</html>
