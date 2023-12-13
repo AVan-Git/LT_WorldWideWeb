@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add item</title>
+</head>
+<body>
+<h2>Add Item</h2>
+<hr/>
+<form action="#" th:action="@{/add_item}" th:object="${item}" method="post">
+
+    <label for="name">name: </label>
+    <input type="text" th:field="*{name}" name="name" id="name"/>
+    <br>
+    <!---->
+    <label for="numberOf">numberOf</label>
+    <input type="number" th:field="*{numberOf}" name="numberOf" id="numberOf"/>
+    <br>
+    <!---->
+    <label for="price">price</label>
+    <input type="number" th:field="*{price}" name="price" id="price"/>
+    <br>
+    <!---->
+
+    <label for="price">List Id Cart</label>
+    <select name="cart" id="cart" >
+        <div th:each="cart: ${carts}" >
+
+            <option th:value="${cart}" th:text="${cart.getId()}"></option>
+        </div>
+    </select>
+    <br>
+    <!---->
+
+    <input type="submit" value="Add item">
+
+</form>
+
+</body>
+</html>

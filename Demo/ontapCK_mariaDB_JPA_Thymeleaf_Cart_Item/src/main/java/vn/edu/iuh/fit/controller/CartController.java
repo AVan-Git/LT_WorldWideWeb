@@ -14,7 +14,6 @@ import vn.edu.iuh.fit.repository.CartRepository;
 import vn.edu.iuh.fit.repository.ItemRepository;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -91,6 +90,6 @@ public class CartController {
             model.addAttribute("items", null);
         else
             model.addAttribute("items", items);
-        return "/item/page-item";
+        return "page-item-detail";
     }
 }

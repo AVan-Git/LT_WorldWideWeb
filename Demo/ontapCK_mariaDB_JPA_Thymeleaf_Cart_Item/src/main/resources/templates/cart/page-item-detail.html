@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ds Item theo Cart</title>
+</head>
+<body>
+    <h2>Ds Item</h2>
+
+    <hr/>
+    <div th:switch="${items}" >
+        <h2 th:case="null"> Khongo co gia tri</h2>
+        <div th:case="*" >
+            <table style="width: 100%;" >
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>number of</th>
+                    <th>price</th>
+                    <th>sum price</th>
+                    <th>edit</th>
+                    <th>del</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item: ${items}">
+                    <td th:text="${item.id}"></td>
+                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.numberOf}"></td>
+                    <td th:text="${item.price}"></td>
+                    <td th:text="${item.sumPrice}"></td>
+                    <td><a th:href="@{/update_item/{id}(id=${item.id})}" />Edit</td>
+                    <td><a th:href="@{/delete_item/{id}(id=${item.id})}" />Delete</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p> <a href="/add_item" />add item</p>
+</body>
+</html>
