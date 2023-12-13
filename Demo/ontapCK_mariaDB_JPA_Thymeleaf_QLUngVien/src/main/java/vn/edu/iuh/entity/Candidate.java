@@ -28,7 +28,7 @@ public class Candidate {
                 ", fullName='" + fullName + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", experiences=" + experiences +
+//                ", experiences=" + experiences +
                 '}';
     }
 
@@ -64,15 +64,22 @@ public class Candidate {
         this.email = email;
     }
 
-    public List<Experience> getExperiences() {
-        return experiences;
-    }
-
-    public void setExperiences(List<Experience> experiences) {
-        this.experiences = experiences;
-    }
+//    public List<Experience> getExperiences() {
+//        return experiences;
+//    }
+//
+//    public void setExperiences(List<Experience> experiences) {
+//        this.experiences = experiences;
+//    }
 
     public Candidate() {
+    }
+
+    public Candidate(long id, String fullName, String phone, String email) {
+        this.id = id;
+        this.fullName = fullName;
+        this.phone = phone;
+        this.email = email;
     }
 
     public Candidate(long id, String fullName, String phone, String email, List<Experience> experiences) {
