@@ -2,7 +2,10 @@ package vn.edu.iuh.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import vn.edu.iuh.entity.Candidate;
 import vn.edu.iuh.entity.Experience;
 import vn.edu.iuh.entity.enums.Roles;
@@ -10,6 +13,7 @@ import vn.edu.iuh.repository.CandidateRepository;
 import vn.edu.iuh.repository.ExperienceRepository;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Random;
 
 @Controller
@@ -75,5 +79,23 @@ public class CandidateController {
 
         return "redirect:/";
     }
+    //
+    @GetMapping("/list_candidate")
+    public String getAllCandidates(Model model) {
 
+        model.addAttribute("candidates", candidateRepository.findAll());
+
+        return "candidates";
+    }
+    //
+    @GetMapping("/detail_can/{id}")
+    public String DetailCandiDate(@PathVariable("id") long id, Model model) {
+
+        Candidate can = candidateRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Khong tim thay Candidate co ma: "+ id));
+
+        List<Experience> experiences = experienceRepository.findAllByCandidate(can);
+        model.addAttribute("list_exp" , experiences);
+        return "candidate-details";
+    }
 }

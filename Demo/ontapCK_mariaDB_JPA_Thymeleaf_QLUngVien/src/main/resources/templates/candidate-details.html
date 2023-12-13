@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ds Exp - detail Can</title>
+</head>
+<body>
+<h2>List Experience</h2>
+<hr/>
+<table style="width: 80%">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Company Name</th>
+        <th>Work Des</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th>Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="exp: ${list_exp}">
+        <td th:text="${exp.id}"></td>
+        <td th:text="${exp.companyName}"></td>
+        <td th:text="${exp.workDescription}"></td>
+        <td th:text="${exp.fromDate}"></td>
+        <td th:text="${exp.toDate}"></td>
+        <td th:text="${exp.role}"></td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<a href="/list_candidate">Go to Back.</a>
+</body>
+</html>
